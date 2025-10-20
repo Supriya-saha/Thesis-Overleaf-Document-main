@@ -121,15 +121,10 @@
 \lhead{}
 \renewcommand\bibname{References}
 
-%%%\bibliographystyle{Ref/IEEEtran}
-% \bibliographystyle{Ref/asme}
-%%%\bibliographystyle{Ref/naturemag}
-%%%\bibliographystyle{Ref/bmes}
-%%%\bibliographystyle{Ref/achemso}
-%%%\bibliographystyle{Ref/rsc}
-%%%\bibliographystyle{Ref/osajnl}
-%%
-%
+\bibliographystyle{IEEEtran}
+\addcontentsline{toc}{chapter}{References}
+\bibliography{ref}
+\nocite{*}
 \cleardoublepage
 %%% % % % % % % % % % % % % % % % % % % % % % % % % % %
 %%% % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -138,13 +133,6 @@
 % \input{Ref/SampleDissemination}
 \thispagestyle{empty}
 \cleardoublepage
-% % % % % % % % % % % % % % % % % % % % % % % % % % %
-% % % % % % % % % % % % % % % % % % % % % % % % % % %
-\indexColumns{3}
-\indexPage
-\bibliographystyle{plain}  % or another style like ieeetr, acm, etc.
-\bibliography{ref}% references.bib is the file name of your bibtex file
-\nocite{*}
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \end{document}
