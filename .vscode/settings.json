@@ -1,0 +1,109 @@
+{
+    "latex-workshop.latex.outDir": "./bin",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex ➞ bibtex ➞ lualatex × 2",
+            "tools": [
+                "lualatex",
+                "bibtex",
+                "lualatex",
+                "lualatex",
+                "copy_pdf"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "latexmk_lualatex",
+                "copy_pdf"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "LUAINPUTS": "E:/apps/mitek/tex/luatex///"
+            }
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk_lualatex",
+            "command": "latexmk",
+            "args": [
+                "-lualatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "LUAINPUTS": "E:/apps/mitek/tex/luatex///"
+            }
+        },
+        {
+            "name": "copy_pdf",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "Copy-Item",
+                "-Path",
+                "./bin/%DOCFILE%.pdf",
+                "-Destination",
+                "./%DOCFILE%.pdf",
+                "-Force"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.magic.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-output-directory=%OUTDIR%",
+        "%DOC%"
+    ],
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz(busy)",
+        "*.nav",
+        "*.vrb",
+        "*.xdv"
+    ]
+}

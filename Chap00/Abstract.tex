@@ -1,0 +1,12 @@
+\thispagestyle{empty} 
+\SpecialTitle{Abstract}
+\noindent The detection of misinformation on social media platforms often handles text and images separately or simply combines them by simple concatenation, yielding weak cross-modal alignment and limited understanding. This weak integration leads to poor alignment between the two modalities which results in less accurate predictions and limited understanding of how those predictions are made. When the text and image in a post contradict one another then systems tend to struggle and they provide little to no explanation for their decisions.
+
+Recent advances in multimodal learning address these challenges by improving how text and images are aligned and fused. Contrastive learning helps bring related text–image pairs closer together in the model's understanding while pushing unrelated ones apart. Cross-modal attention then allows the system to focus on whichever modality is more important for each individual post.
+
+In order to make the process transparent, the system uses explainability techniques such as Grad-CAM, which highlights the most influential regions of an image, and token-level SHAP, which shows which words in the text contributed most to the decision.
+
+This project proposes building an end-to-end fake news detection system for Twitter posts that combines BERT for text understanding and ResNet50 for image analysis. Both components will be pre-trained with contrastive loss to align their representations, and their outputs will be fused using cross-modal attention before classification. This approach is expected to deliver more accurate predictions and offer clear visual explanations of how each decision was made.
+
+\vspace{5mm}
+\noindent\textbf{\textit{Keywords}}:~\textit{Misinformation Detection};~\textit{Multimodal Learning};~\textit{Contrastive Learning};~\textit{Cross-Modal Attention};~\textit{BERT};~\textit{ResNet50};~\textit{Fake News Detection};~\textit{Explainable AI (XAI)};~\textit{Grad-CAM};~\textit{SHAP};~\textit{Text–Image Fusion}.
