@@ -1,5 +1,4 @@
 # LaTeX auxiliary files in bin folder
-bin/
 
 # But keep track that bin folder exists
 !bin/.gitkeep
