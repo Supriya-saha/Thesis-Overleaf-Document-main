@@ -79,7 +79,6 @@
         "-output-directory=%OUTDIR%",
         "%DOC%"
     ],
-    "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux",
         "*.bbl",
