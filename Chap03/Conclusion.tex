@@ -4,42 +4,13 @@
 This report presents the design and partial implementation of an enhanced multimodal fake news detection system that integrates advanced vision–language techniques to address fundamental limitations in existing pipelines. The motivation stems from the inadequacies of late fusion strategies, weak cross-modal alignment, and opacity in decision-making. Preliminary architecture choices have been validated through ablation planning: comparing ResNet50 against the VGG19 baseline will quantify gains in accuracy.
 
 \section{Future Work}
+While the current system successfully integrates contrastive learning, cross-modal attention, and explainability techniques, several promising directions remain for future enhancement:
 
-\subsection{Contrastive Pre-training for Cross-Modal Alignment}
-Addition of Contrastive learning to pre-train text and image encoders jointly before supervised fine-tuning. Current concatenation-based fusion operates on embeddings learned independently, which occupy incompatible latent regions and fail to model semantic correspondence. Contrastive learning addresses this by optimizing an InfoNCE loss that maximizes cosine similarity for matched text-image pairs (from the same post) while minimizing similarity for randomly sampled negative pairs within each mini-batch.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=10cm]{Chap03/contrastive_learning.png}
-    \caption{Contrastive Learning for Cross-Modal Alignment. The diagram illustrates how contrastive learning organizes the embedding space by moving similar items (anchor and positives) closer together while pushing dissimilar items (negatives) further apart, creating distinct clusters for different categories.}
-    \label{fig:contrastive_learning}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=10cm]{Chap03/contrastive_usage_example.png}
-    \caption{Contrastive Learning Usage Example. This figure demonstrates the practical application of contrastive learning where text and image pairs are encoded and aligned in a shared embedding space, enabling better cross-modal understanding.}
-    \label{fig:contrastive_usage_example}
-\end{figure}
-
-\subsection{Cross-Modal Attention for Selective Fusion}
-While contrastive learning aligns modalities, concatenation still treats them uniformly at the instance level. Cross-modal attention resolves this by enabling the model to dynamically weight modality contributions based on content. For instance, if text is vague ("Breaking news!") but the image shows clear evidence (manipulated photo), attention up-weights visual features; conversely, if the image is uninformative (generic landscape), attention focuses on text.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=10cm]{Chap03/cross-attention.png}
-    \caption{Cross-Modal Attention Mechanism. The architecture shows how visual and textual encoders feed into linear projection layers, followed by multi-head cross-modal attention that selectively fuses information from both modalities through Query-Key-Value transformations, producing cross-modal attention scores.}
-    \label{fig:cross_attention}
-\end{figure}
-
-\subsection{Explainability Framework: Grad-CAM and SHAP}
-To render the model less of a black box and more interpretable, three explainability measures Grad-CAM, SHAP, and Attention Heatmap were introduced. 
-
-Grad-CAM (Gradient-weighted Class Activation Mapping) supports the identification and visualization of the key input image areas, which in turn had the most significant impact on the model's decision. With this technique, the image becomes overlaid with a heatmap marking the regions that predominantly drive the prediction, thus providing an indication of whether the model is focusing on the relevant visual cues such as faces, objects, or manipulated areas.
-
-SHAP (Shapley Additive Explanations) is a technology that highlights the words that have the highest contribution to the output. It comes to such a conclusion by determining the prediction each word has, thus giving the importance scores that point out the most influential textual features.
-
-Attention heatmaps are a different modality used to establish the interaction between different modalities. Such means illustrate how a model associates' language and images by pointing out the visual parts that correspond to certain words in the text. This, in turn, assists in comprehending the cross-modal reasoning process and verifying if the model is efficiently correlating information across both modalities.
+\begin{itemize}
+    \item \textbf{Multi-Dataset Generalization and Cross-Platform Evaluation:} Extend the model's training and evaluation to diverse social media platforms (Facebook, Instagram, WhatsApp) and datasets beyond Twitter, including Weibo, FakeNewsNet, and Fakeddit. This would validate the system's generalization capability across different linguistic contexts, visual styles, and misinformation patterns. Additionally, incorporating multilingual datasets would enable fake news detection in non-English languages, significantly broadening the model's real-world applicability.
+    
+    \item \textbf{Hyperparameter Optimization and Architecture Search:} Conduct systematic hyperparameter tuning using techniques such as Bayesian optimization or grid search to identify optimal configurations for learning rate schedules, attention head counts, contrastive loss temperature ($\tau$), and dropout rates. Furthermore, exploring neural architecture search (NAS) could automatically discover more efficient encoder architectures or attention mechanisms that balance accuracy with computational efficiency, potentially reducing inference time for production deployment.
+\end{itemize}
 
 \section{Limitations and Challenges}
 Even if the proposed changes cover most of the issues, a few limitations remain:

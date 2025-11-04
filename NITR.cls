@@ -223,7 +223,7 @@
 						{
 							\ifthenelse{\@docType=1}{Dissertation submitted in partial fulfillment}
 							{\ifthenelse{\@docType=2}{Thesis submitted in partial fulfillment}
-							{\ifthenelse{\@docType=3}{\large\textbf{\\Progress Report - March 2025}\\ \textit{submitted in partial fulfillment}}{E R R O R}}}}
+							{\ifthenelse{\@docType=3}{\large\textbf{\\Progress Report - October 2025}\\ \textit{submitted in partial fulfillment}}{E R R O R}}}}
 							\\
 						{\textit{of the requirements for the degree of}}\\
 						{\large\textit{\textbf{\@degree}}}\\ %
