@@ -36,7 +36,7 @@ Figure \ref{fig1} presents the proposed multimodal fake news detection architect
 \section{Proposed Methodology}
 \begin{figure*}[!t]
     \centering
-    \includegraphics[width=15cm]{Chap02/Spot fake design.png}
+    \includegraphics[width=15cm]{Chap02/spotfake_arch.png}
     \caption{Architecture of the Proposed Multimodal Fake News Detection System.}
     \label{fig1}
 \end{figure*}
@@ -157,7 +157,7 @@ Table~\ref{tab:model_comparison} presents a comparison between the baseline VGG1
         VGG19-BERT & BERT & VGG19 & Concat & 0.77 & 0.76 & 2.5 min \\
         (Baseline) & & & & & & \\
         \hline
-        ResNet50-BERT & BERT & ResNet50 & Concat & \textbf{0.79} & \textbf{0.78} & 2.8 min \\
+        ResNet50-BERT & BERT & ResNet50 & Cross Model & \textbf{0.79} & \textbf{0.77} & 3.1 min \\
         (Current) & & & & & & \\
         \hline
     \end{tabular}
@@ -199,7 +199,7 @@ These complementary explanations provide transparency into the model's decision-
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{Chap02/gradcam_sample_0.png}
+    \includegraphics[width=0.85\textwidth]{Chap02/image.png}
     \caption{Example visual explanations from Grad-CAM and SHAP for fake news detection. The left panel shows Grad-CAM heatmaps overlaid on input images, highlighting discriminative regions that influenced the prediction (e.g., manipulated text overlays, suspicious visual elements). The right panel presents SHAP value plots for the corresponding text, indicating key tokens (e.g., "shocking", "unbelievable") that contributed positively to the fake news classification. Red/warm colors indicate features supporting the fake label, while blue/cool colors represent features supporting the real label. These visualizations provide actionable insights into the model's reasoning process across both modalities.}
     \label{fig:gradcam_shap_results}
 \end{figure}
