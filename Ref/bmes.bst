@@ -276,7 +276,7 @@ MACRO {aug} {"August"}
 
 MACRO {sep} {"September"}
 
-MACRO {oct} {"October"}
+MACRO {oct} {"November"}
 
 MACRO {nov} {"November"}
 

@@ -4,7 +4,7 @@ Dissertation Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~
 Version 4.5
-Date: 07 October 2016
+Date: 07 November 2016
 Address: CVR Lab, Department of CSE, NIT Rourkela, 769008, Odisha, India.
 http://nitrkl.ac.in
 ~~~~~~~~~~~~~~~~~~~~~~~

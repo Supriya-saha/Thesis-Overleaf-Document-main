@@ -4,7 +4,7 @@
 %%~~~~~~~~~~~~~~~~~~~~~~~
 %%~~~~~~~~~~~~~~~~~~~~~~~
 %%Version 4.5
-%%Date: 07 October 2016
+%%Date: 07 November 2016
 %%Address: CVR Lab, Department of CSE, NIT Rourkela, 769008, Odisha, India.
 %%http://nitrkl.ac.in
 %%~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,9 +221,9 @@
 		\begin{center}
 					\begin{spacing}{1.8}
 						{
-							\ifthenelse{\@docType=1}{Dissertation submitted in partial fulfillment}
-							{\ifthenelse{\@docType=2}{Thesis submitted in partial fulfillment}
-							{\ifthenelse{\@docType=3}{\large\textbf{\\Progress Report - October 2025}\\ \textit{submitted in partial fulfillment}}{E R R O R}}}}
+							\ifthenelse{\@docType=1}{Dissertation submitted in complete fulfillment}
+							{\ifthenelse{\@docType=2}{Thesis submitted in complete fulfillment}
+							{\ifthenelse{\@docType=3}{\large\textbf{\\Progress Report - November 2025}\\ \textit{submitted in complete fulfillment}}{E R R O R}}}}
 							\\
 						{\textit{of the requirements for the degree of}}\\
 						{\large\textit{\textbf{\@degree}}}\\ %
@@ -313,7 +313,7 @@
 	\ifthenelse{\@docType=1}{dissertation}
 		{\ifthenelse{\@docType=2}{thesis}
 			{\ifthenelse{\@docType=3}{project report}{E R R O R}}}
-	submitted in partial fulfillment of the requirements of the degree of \textit{\@degree} in \textit{\@degreeIn} at \textit{\@nitr}. We are satisfied with the volume, quality, correctness, and originality of the work.
+	submitted in complete fulfillment of the requirements of the degree of \textit{\@degree} in \textit{\@degreeIn} at \textit{\@nitr}. We are satisfied with the volume, quality, correctness, and originality of the work.
 	
 	\vspace*{15mm}
 	\ifthenelse{\@numOfSupervisors = 2}
@@ -425,7 +425,7 @@
 		\ifthenelse{\@docType=1}{thesis}
 			{\ifthenelse{\@docType=2}{thesis}
 				{\ifthenelse{\@docType=3}{progress report}{E R R O R}}}
-	entitled {\it\@docTitle} submitted by {\it\@author}, Roll Number~\@rollNumber, is a record of ongoing original research carried out by \ifthenelse{\equal{\@authorGender}{male}}{him}{\ifthenelse{\equal{\@authorGender}{female}}{her}{E R R O R}} under my supervision and guidance in partial fulfillment of the requirements of the degree of \textit{\@degree} in \textit{\@degreeIn}. Neither this
+	entitled {\it\@docTitle} submitted by {\it\@author}, Roll Number~\@rollNumber, is a record of ongoing original research carried out by \ifthenelse{\equal{\@authorGender}{male}}{him}{\ifthenelse{\equal{\@authorGender}{female}}{her}{E R R O R}} under my supervision and guidance in complete fulfillment of the requirements of the degree of \textit{\@degree} in \textit{\@degreeIn}. Neither this
 	\ifthenelse{\@docType=1}{thesis}
 		{\ifthenelse{\@docType=2}{thesis}
 			{\ifthenelse{\@docType=3}{progress report}{E R R O R}}}
@@ -489,7 +489,7 @@
 	\ifthenelse{\@docType=1}{thesis}
 		{\ifthenelse{\@docType=2}{thesis}
 			{\ifthenelse{\@docType=3}{progress report}{E R R O R}}}
-	entitled {\it\@docTitle} submitted by {\it\@author}, Roll Number~\@rollNumber, is a record of original research carried out by \ifthenelse{\equal{\@authorGender}{male}}{him}{\ifthenelse{\equal{\@authorGender}{female}}{her}{E R R O R}} under our supervision and guidance in partial fulfillment of the requirements of the degree of \textit{\@degree} in \textit{\@degreeIn}. Neither this 
+	entitled {\it\@docTitle} submitted by {\it\@author}, Roll Number~\@rollNumber, is a record of original research carried out by \ifthenelse{\equal{\@authorGender}{male}}{him}{\ifthenelse{\equal{\@authorGender}{female}}{her}{E R R O R}} under our supervision and guidance in complete fulfillment of the requirements of the degree of \textit{\@degree} in \textit{\@degreeIn}. Neither this 
 	\ifthenelse{\@docType=1}{thesis}
 		{\ifthenelse{\@docType=2}{thesis}
 			{\ifthenelse{\@docType=3}{project report}{E R R O R}}}
@@ -532,7 +532,7 @@
 	\linespread{1}
 	\begin{minipage}{.45\textwidth}
 		\begin{flushleft}
-			October 21, 2025\\
+			November 21, 2025\\
 			NIT Rourkela
 		\end{flushleft}
 	\end{minipage}

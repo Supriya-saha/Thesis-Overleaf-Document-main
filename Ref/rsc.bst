@@ -1249,7 +1249,7 @@ MACRO {jun} {"June"}
 MACRO {jul} {"July"}
 MACRO {aug} {"August"}
 MACRO {sep} {"September"}
-MACRO {oct} {"October"}
+MACRO {oct} {"November"}
 MACRO {nov} {"November"}
 MACRO {dec} {"December"}
 
