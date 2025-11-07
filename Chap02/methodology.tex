@@ -93,14 +93,14 @@ where $z_i^t$ and $z_i^v$ are the normalized text and image embeddings, $\text{s
 \end{figure}
 
 \subsection{Cross-Modal Attention for Selective Fusion}
-Although​‍​‌‍​‍‌​‍​‌‍​‍‌ contrastive pre-training helps to closely match the semantics between different modalities, simply concatenating the features still treats all features as if they were equally important. In order to solve this problem, we have introduced cross-modal attention mechanisms in our model which allow it to adjust the weights of modality contributions depending on the content characteristics.
+Although contrastive pre-training helps to closely match the semantics between different modalities, simply concatenating the features still treats all features as if they were equally important. In order to solve this problem, we have introduced cross-modal attention mechanisms in our model which allow it to adjust the weights of modality contributions depending on the content characteristics.
 The attention mechanism selects the modality that is most informative for a given post and tries to focus on it. For instance, if a text is unclear or very general (e.g., "Breaking news!" or "You won't believe this"), but an image shows some obvious visual facts (like a manipulated photo or inconsistent metadata), the attention mechanism will be increasing the contribution of the visual features. On the other hand, if an image is not helpful at all (e.g., a generic stock photo or a landscape), the model will concentrate mainly on textual cues.
 
 We have employed multi-head cross-modal attention in our system, where text embeddings act as queries ($Q$), and image embeddings are keys ($K$) and values ($V$). The attention scores are computed as:
 \[
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 \]
-where $d_k$ denotes the dimension of the key vectors. This results in attention-weighted multimodal representations that can even capture very subtle interactions between textual and visual information, thus greatly enhancing the capability of the model in detecting slight inconsistencies that are usually the case with ​‍​‌‍​‍‌​‍​‌‍​‍‌misinformation.
+where $d_k$ denotes the dimension of the key vectors. This results in attention-weighted multimodal representations that can even capture very subtle interactions between textual and visual information, thus greatly enhancing the capability of the model in detecting slight inconsistencies that are usually the case with misinformation.
 
 \begin{figure}[!ht]
     \centering
@@ -113,14 +113,14 @@ where $d_k$ denotes the dimension of the key vectors. This results in attention-
 In order to reveal the working mechanism of our multimodal fake news detection system and to make it interpretable to people, we employ three different, but related, explainability techniques that illustrate the model's decision process visually, textually, and cross-modally.
 
 \subsubsection{Grad-CAM for Visual Explanation}
-Grad-CAM (Gradient-weighted Class Activation Mapping) helps to find and visualize the areas in the input images that have the greatest influence on the model output. Grad-CAM creates a localization map of the most relevant areas by calculating the gradient of the target class score with the last convolutional features. The map is then color-coded and overlaid on the original image to show those regions–for example, faces, objects, or manipulated areas–that contributed most to the classification decision. This method of presentation serves the purpose of confirming if the visual cues the model relies on are semantically correct or if they are just some random artifacts.
+Grad-CAM (Gradient-weighted Class Activation Mapping) helps to find and visualize the areas in the input images that have the greatest influence on the model output. Grad-CAM creates a localization map of the most relevant areas by calculating the gradient of the target class score with the last convolutional features. The map is then color-coded and overlaid on the original image to show those regions - for example, faces, objects, or manipulated areas - that contributed most to the classification decision. This method of presentation serves the purpose of confirming if the visual cues the model relies on are semantically correct or if they are just some random artifacts.
 
 \subsubsection{SHAP for Textual Explanation}
 SHAP (SHapley Additive exPlanations) gives local importance scores of tokens for the text input, thus uncovering the words that influence the prediction the most. SHAP relies on game-theoretic Shapley value principles and it determines the contribution of each token by evaluating the prediction for every possible token subset. The computed importance scores pinpoint the most influential textual features—say for instance sensational phrases, emotional words, or contradictory statements—that in turn determine the fake news classification done by the model. This facilitates granular error analysis and also assists in recognizing the bias and the misleading patterns in the text encoder which are caused by the use of specific words.
 
 \subsubsection{Cross-Modal Attention Heatmaps}
 Attention heatmaps represent the mutual referential relations between language and vision models that the system has learned. They demonstrate how the model links certain words with the relevant image segments. The weights of the cross-modal attention can be used to locate those parts in the picture that correspond to certain text tokens. To give an example, the word "crowd" in the text should point towards the crowd in the photo whereas a case of contradiction (e.g., "empty street" and a photo of a crowd) should show that the attention is not aligned. These are very important findings from the cross-modal reasoning process that the model uses and help verify whether the model efficiently correlates information across two different modalities or depends on shallow features.
-Together, these three explainability techniques transform the model from a black-box classifier into an interpretable system that provides actionable insights for content moderators, fact-checkers, and end-users seeking to understand the rationale behind fake news ​‍​‌‍​‍‌​‍​‌‍​‍‌predictions.
+Together, these three explainability techniques transform the model from a black-box classifier into an interpretable system that provides actionable insights for content moderators, fact-checkers, and end-users seeking to understand the rationale behind fake news predictions.
 
 \section{Training Protocols and Results}
 
@@ -136,7 +136,7 @@ The model was trained using the following hyperparameters:
 \end{itemize}
 
 \subsection{Dataset Description}
-In​‍​‌‍​‍‌​‍​‌‍​‍‌ the Twitter fake news dataset, the train/test split as given was utilized. To focus only on posts with visuals, images were filtered, and text was preprocessed using the BERT tokenizer. The class distribution for the dataset is around the same number of fake and real news posts.
+In the Twitter fake news dataset, the train/test split as given was utilized. To focus only on posts with visuals, images were filtered, and text was preprocessed using the BERT tokenizer. The class distribution for the dataset is around the same number of fake and real news posts.
 
 \subsection{Model Comparison}
 Table~\ref{tab:model_comparison} compares the baseline VGG19-BERT model with the present ResNet50-BERT model.

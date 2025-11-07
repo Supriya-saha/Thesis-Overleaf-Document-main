@@ -1,10 +1,10 @@
 \chapter{Conclusion and Future Work}
 
 \section{Summary}
-​‍​‌‍​‍‌​‍​‌‍​‍‌ The report details the architectural planning and full execution of the upgraded multimodal fake news detection system, which combines the sophisticated vision-language methods to deal with the issues that arise from the fundamental constraints of the existing pipelines. The driving force is the insufficiencies of the late fusion strategies, the poor cross-modal alignment, and the indifference of the decision-making. Initial architectural decisions have been justified by ablation experiments: performance differences between ResNet50 and VGG19 baseline will measure improvements in accuracy. ​‍​‌‍​‍‌​‍​‌‍​‍‌
+The report details the architectural planning and full execution of the upgraded multimodal fake news detection system, which combines the sophisticated vision-language methods to deal with the issues that arise from the fundamental constraints of the existing pipelines. The driving force is the insufficiencies of the late fusion strategies, the poor cross-modal alignment, and the indifference of the decision-making. Initial architectural decisions have been justified by ablation experiments: performance differences between ResNet50 and VGG19 baseline will measure improvements in accuracy.
 
 \section{Future Work}
-The​‍​‌‍​‍‌​‍​‌‍​‍‌ current system manages to successfully integrate contrastive learning, cross-modal attention, and explainability techniques but has several promising future directions for improvement:
+The current system manages to successfully integrate contrastive learning, cross-modal attention, and explainability techniques but has several promising future directions for improvement:
 
 \begin{itemize}
     \item \textbf{Multi-Dataset Generalization and Cross-Platform Evaluation:} The model's training and testing should be expanded to cover different social media platforms (Facebook, Instagram, WhatsApp) and datasets other than Twitter, such as Weibo, FakeNewsNet, and Fakeddit. In this way, the capability of the system to generalize across different linguistic contexts, visual styles, and misinformation patterns will be confirmed. Moreover, the use of multilingual datasets will allow the detection of fake news in different languages, thus the model's applicability in the real world will be increased significantly.
@@ -15,12 +15,12 @@ The​‍​‌‍​‍‌​‍​‌‍​‍‌ current system manages to su
 \section{Limitations and Challenges}
 The limitations that the system has although the proposed modifications cover almost all the problems:
 \begin{itemize}
-    \item \textbf{Dataset Constraints:} The data for the training of the model were limited to Twitter posts only. There is no evidence that the model can handle other platforms (Facebook, WhatsApp), different languages, or various multimedia formats (video, audio).
+    \item \textbf{Dataset Constraints:} The data for the training of the model were limited to Twitter posts only. The model was not tested on other platforms (Facebook, WhatsApp), different languages, or various multimedia formats (video, audio).
     \item \textbf{Computational Cost:} The model's training is getting slower due to contrastive pre-training and attention mechanisms.
     \item \textbf{Interpretability Gaps:} Both Grad-CAM and SHAP methods point to correlations but not causations. Attention may be a necessary condition, but it is not sufficient for the explanation (high attention $\neq$ causal relevance).
     \item \textbf{Class Imbalance:} For the case of significantly biased real/fake distribution, accuracy may give a misleading signal.
-    \item \textbf{Adversarial Robustness:} The model is not checked for adversarial perturbations (e.g., adding imperceptible noise to images or paraphrasing text). The next step should be to assess robustness by adversarial attacks (FGSM, PGD).
+    \item \textbf{Adversarial Robustness:} The model is not checked for adversarial perturbations (e.g., adding imperceptible noise to images or paraphrasing text). The next step should be to assess robustness by adversarial attacks.
 \end{itemize}
 
 \section{Concluding Remarks}
-This report lays down the principles for a multimodal deepfake news detection method that is interpretable, scalable, and principled, i.e., it is based on the integration of residual learning (ResNet50), contrastive alignment (CLIP-style pre-training), selective fusion (cross-modal attention), and transparent explanations (Grad-CAM, SHAP), that together tackle the key gaps of the existing approaches. The promise of contrastive pre-training, attention, and explainability to bring about the desired improvements in accuracy and robustness is contingent upon ResNet50 integration, which sets the ​‍​‌‍​‍‌​‍​‌‍​‍‌stage.
+This report lays down the principles for a multimodal deepfake news detection method that is interpretable, scalable, and principled, i.e., it is based on the integration of residual learning (ResNet50), contrastive alignment (CLIP-style pre-training), selective fusion (cross-modal attention), and transparent explanations (Grad-CAM, SHAP), that together tackle the key gaps of the existing approaches. The promise of contrastive pre-training, attention, and explainability to bring about the desired improvements in accuracy and robustness is contingent upon ResNet50 integration, which sets the stage.
