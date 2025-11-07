@@ -532,7 +532,7 @@
 	\linespread{1}
 	\begin{minipage}{.45\textwidth}
 		\begin{flushleft}
-			November 21, 2025\\
+			November 13, 2025\\
 			NIT Rourkela
 		\end{flushleft}
 	\end{minipage}
